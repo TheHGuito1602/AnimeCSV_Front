@@ -1,0 +1,50 @@
+<!-- tu-componente.component.html -->
+<div class="d-flex justify-content-evenly">
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="bg-primary">Fuentes disponibles</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngIf="animeA; else loadingStringA">
+      <ng-container *ngFor="let fuente of animeA">
+        <p>{{ fuente }}</p>
+      </ng-container>
+    </ng-container>
+    <ng-template #loadingStringA>
+      <p>Cargando información de string...</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="bg-success">Estudios disponibles</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngIf="animeB; else loadingStringB">
+      <ng-container *ngFor="let estudio of animeB">
+        <p>{{ estudio }}</p>
+      </ng-container>
+    </ng-container>
+    <ng-template #loadingStringB>
+      <p>Cargando información de string...</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="bg-warning">Clasificaciones disponibles</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ng-container *ngIf="animeC; else loadingStringC">
+        <ng-container *ngFor="let clasificacion of animeC">
+          <p>{{ clasificacion }}</p>
+        </ng-container>
+      </ng-container>
+      <ng-template #loadingStringC>
+        <p>Cargando información de string...</p>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>

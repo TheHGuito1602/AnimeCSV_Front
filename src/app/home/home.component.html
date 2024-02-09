@@ -1,0 +1,66 @@
+<div class="container-fluid w-100">
+  <form (ngSubmit)="realizarBusqueda()" class="d-flex justify-content-evenly align-items-center row">
+
+      <div class="d-flex align-items-center col-3">
+        <label for="selectAtributo"></label>
+        <select id="selectAtributo" name="selectAtributo" [(ngModel)]="atributo" class="form-control">
+          <option value="title">Título</option>
+          <option value="ranked">Pisición</option>
+          <option value="status">Estado</option>
+          <option value="premiered">Estreno</option>
+          <option value="rating">Clasificación</option>
+          <option value="source">Fuente</option>
+          <!-- Otros atributos... -->
+        </select>
+      </div>
+      <div class="d-flex align-items-center col-6">
+        <label for="valorBusqueda"></label>
+        <input type="text" id="valorBusqueda" name="valorBusqueda" [(ngModel)]="valor" class="form-control" placeholder="Valor de búsqueda">
+      </div>
+    <button type="submit" class="btn btn-primary col-1"><mat-icon>search</mat-icon></button>
+  </form>
+
+  <div class="d-flex justify-content-evenly align-items-center m-2">
+    <button (click)="sinEstudios()" class="btn btn-primary">Sin estudios de animación</button>
+    <!-- tu-componente.component.html -->
+    <button (click)="sinLicenciantes()" class="btn btn-primary">Sin licenciantes</button>
+    <button (click)="episodiosPares()" class="btn btn-primary">Episodios pares</button>
+    <!-- tu-componente.component.html -->
+    <button (click)="episodiosImpares()" class="btn btn-primary">Episodios impares</button>
+  </div>
+
+  <form (ngSubmit)="enviarFormulario()" class="d-flex justify-content-evenly align-items-center m-2">
+    <label for="campo1">Buscar entre puntuación:</label>
+    <input type="text" id="campo1" name="campo1" [(ngModel)]="datos.campo1" required class="form-control" placeholder="Máximo">
+    <br>
+    <input type="text" id="campo2" name="campo2" [(ngModel)]="datos.campo2" required class="form-control" placeholder="Mínimo">
+
+    <button class="btn btn-primary" type="submit"><mat-icon>search</mat-icon></button>
+  </form>
+
+
+  <table id="tablaAnime" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let col of displayedColumns" [matColumnDef]="col">
+      <th mat-header-cell *matHeaderCellDef>{{ columnMapping[col] }}</th>
+      <td mat-cell *matCellDef="let anime">
+        <ng-container *ngIf="col !== 'aired'; else dateColumn">
+          {{ anime[col] }}
+        </ng-container>
+        <ng-template #dateColumn>
+          {{ getFormattedAiredDate(anime[col]) }}
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+
+  <div *ngIf="animesNonPresent">
+    <p>No hay animes disponibles.</p>
+  </div>
+
+
+</div>

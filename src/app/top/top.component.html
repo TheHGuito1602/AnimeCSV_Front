@@ -1,0 +1,316 @@
+<mat-grid-list cols="3" rowHeight="200px" gutterSize="16px">
+  <!-- Cuadro Anime A -->
+  <mat-grid-tile class="mat-grid-title">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime con más episodios</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeA.title; else loadingAnimeA">
+          <ng-container *ngFor="let titleItem of animeA.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ animeA.episodes }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeA>
+          <p>Cargando información de Anime A...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro Anime B -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime más popular</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeB.title; else loadingAnimeB">
+          <ng-container *ngFor="let titleItem of animeB.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ animeB.popularity }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeB>
+          <p>Cargando información de Anime B...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro Anime C -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime más votado</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeC.title; else loadingAnimeC">
+          <ng-container *ngFor="let titleItem of animeC.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ animeC.vote }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeC>
+          <p>Cargando información de Anime C...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro Anime C -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Primer aanime de la lista</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeD.title; else loadingAnimeD">
+          <ng-container *ngFor="let titleItem of animeD.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ animeD.ranked }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeD>
+          <p>Cargando información de Anime C...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro Anime C -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime con menos episodios</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeE.title; else loadingAnimeE">
+          <ng-container *ngFor="let titleItem of animeE.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ animeE.episodes }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeE>
+          <p>Cargando información de Anime C...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro Anime C -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime menos popular</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeF.title; else loadingAnimeF">
+          <ng-container *ngFor="let titleItem of animeF.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ animeF.popularity }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeF>
+          <p>Cargando información de Anime C...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro Anime C -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime menos votado</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeG.title; else loadingAnimeG">
+          <ng-container *ngFor="let titleItem of animeG.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ animeG.vote }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeG>
+          <p>Cargando información de Anime C...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro Anime C -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime con mayor duración por episodio</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeH.title; else loadingAnimeH">
+          <ng-container *ngFor="let titleItem of animeH.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ parseISO8601Duration(animeH.duration) }}</p>
+          <!--          <p>{{ getFormattedAiredDate(animeH.aired) }}</p>-->
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeH>
+          <p>Cargando información de Anime C...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime con menor duración por episodio</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeI.title; else loadingAnimeI">
+          <ng-container *ngFor="let titleItem of animeI.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ parseISO8601Duration(animeI.duration) }}</p>
+          <!--          <p>{{ getFormattedAiredDate(animeH.aired) }}</p>-->
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeI>
+          <p>Cargando información...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime mas reciente</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeJ.title; else loadingAnimeJ">
+          <ng-container *ngFor="let titleItem of animeJ.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ getFormattedAiredDate(animeJ.aired) }}</p>
+          <!--          <p>{{ getFormattedAiredDate(animeH.aired) }}</p>-->
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeJ>
+          <p>Cargando información...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Anime mas viejo</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="animeK.title; else loadingAnimeK">
+          <ng-container *ngFor="let titleItem of animeK.title">
+            <p>{{ titleItem }}</p>
+            <br *ngIf="!last">
+          </ng-container>
+          <p>{{ getFormattedAiredDate(animeK.aired) }}</p>
+          <!--          <p>{{ getFormattedAiredDate(animeH.aired) }}</p>-->
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingAnimeK>
+          <p>Cargando información...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro String -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Rango de edad más popular</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="cuadroStringA; else loadingStringA">
+          <p>{{ cuadroStringA }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingStringA>
+          <p>Cargando información de string...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro String -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Rango de edad menos popular</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="cuadroStringB; else loadingStringB">
+          <p>{{ cuadroStringB }}</p>
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingStringB>
+          <p>Cargando información de string...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro Number -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Animes cargados a la lista</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="cuadroNumber1 !== null; else loadingNumber">
+          {{ cuadroNumber1 }}
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingNumber>
+          <p>Cargando información de número...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Cuadro Number -->
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Promedio de la puntuación de todos los animes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="cuadroNumber2 !== null; else loadingNumber">
+          {{ cuadroNumber2 | number: '1.2-2' }}
+          <!-- Agrega más detalles según necesites -->
+        </div>
+        <ng-template #loadingNumber>
+          <p>Cargando información de número...</p>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

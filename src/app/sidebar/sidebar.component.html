@@ -1,0 +1,19 @@
+<mat-nav-list class="">
+  <div class="logo py-4">
+    <a routerLink="/home">
+      <img src="./assets/images/image.png" alt="MyAnimeList Logo" />
+    </a>
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="tipe mt-2 text-white"><mat-icon class="w-auto">touch_app</mat-icon>ACCIONES</h2>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/home" class="mat-list-item bg-danger bg-gradient">
+    <mat-icon>home</mat-icon>Home
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/top" class="mat-list-item bg-warning bg-gradient">
+    <mat-icon>stars</mat-icon>Tops
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/collection" class="mat-list-item bg-success bg-gradient">
+    <mat-icon>collections_bookmark</mat-icon>Colecciones
+  </a>
+</mat-nav-list>
