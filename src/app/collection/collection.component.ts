@@ -47,7 +47,7 @@ export class CollectionComponent {
   }
 
   private obtenerInformacionAnimeC(): void {
-    this.animeService.findAllRaiting().subscribe(
+    this.animeService.findAllRating().subscribe(
       (anime) => {
         this.animeC = anime;
       },

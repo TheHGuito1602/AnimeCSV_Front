@@ -2,6 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {AnimeInterface, Fecha} from "../interfaces/anime.interface";
 import {AnimeService} from "../services/anime.service";
 import {last} from "rxjs";
+import {HttpErrorResponse} from "@angular/common/http";
 @Component({
   selector: 'app-top',
   templateUrl: './top.component.html',
@@ -23,7 +24,6 @@ export class TopComponent implements OnInit {
   public animeK: AnimeInterface = {} as AnimeInterface;
   cuadroStringA: String = '';
   cuadroStringB: String = '';
-  cuadroString: String = '';
 
   cuadroNumber1: number = 0;
   cuadroNumber2: number = 0;
@@ -167,9 +167,9 @@ export class TopComponent implements OnInit {
     );
   }
   private configurarCuadroStringA(): void {
-    this.animeService.leastRepeatRating().subscribe(
+    this.animeService.mostRepeatRating().subscribe(
       (informacion) => {
-        this.cuadroString = informacion;
+        this.cuadroStringA = informacion;
       },
       (error) => {
         console.error('Error al obtener información string:', error);
@@ -177,9 +177,9 @@ export class TopComponent implements OnInit {
     );
   }
   private configurarCuadroStringB(): void {
-    this.animeService.mostRepeatRating().subscribe(
-      (informacion) => {
-        this.cuadroString = informacion;
+    this.animeService.leastRepeatRating().subscribe(
+      (informacion ) => {
+        this.cuadroStringB = informacion;
       },
       (error) => {
         console.error('Error al obtener información string:', error);

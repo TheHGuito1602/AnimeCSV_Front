@@ -89,12 +89,12 @@ export class AnimeService {
     return this.http.get<AnimeInterface[]>(`${this.baseUrl}${this.apiUrl}/source/${source}`);
   }
 
-  public mostRepeatRating():Observable<String>{
-    return this.http.get<String>(`${this.baseUrl}${this.apiUrl}/most/repeat/rating`);
+  public mostRepeatRating():Observable<string>{
+    return this.http.get<string>(`${this.baseUrl}${this.apiUrl}/most/repeat/rating`);
   }
 
-  public leastRepeatRating():Observable<String>{
-    return this.http.get<String>(`${this.baseUrl}${this.apiUrl}/least/repeat/rating`);
+  public leastRepeatRating():Observable<string>{
+    return this.http.get<string>(`${this.baseUrl}${this.apiUrl}/least/repeat/rating`);
   }
 
   public findDurationMax():Observable<AnimeInterface>{
@@ -121,8 +121,8 @@ export class AnimeService {
     return this.http.get<String[]>(`${this.baseUrl}${this.apiUrl}/sources/all`);
   }
 
-  public findAllRaiting():Observable<String[]>{
-    return this.http.get<String[]>(`${this.baseUrl}${this.apiUrl}/raiting/all`);
+  public findAllRating():Observable<String[]>{
+    return this.http.get<String[]>(`${this.baseUrl}${this.apiUrl}/rating/all`);
   }
 
   public findWithoutLicensors():Observable<AnimeInterface[]>{

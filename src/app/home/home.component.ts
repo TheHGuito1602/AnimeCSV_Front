@@ -229,12 +229,11 @@ export class HomeComponent implements OnInit, AfterViewInit{
 
   // Función que toma dos parámetros
   funcionConParametros(param1: number, param2: number): void {
-    this.animeService.findBetweenScoreRange(param1,param2)
+    this.animeService.findBetweenScoreRange(param2,param1)
       .subscribe((response)=>{
         this.animes=response;
         this.isLoadding=false;
         this.animesNonPresent=this.animes.length===0;
-
 
         this.dataSource.data = this.animes;
         this.dataSource.paginator = this.paginator;
